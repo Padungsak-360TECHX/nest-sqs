@@ -32,4 +32,16 @@ export class AppConfigService {
   get SQS_QUEUE_URL(): string {
     return this.configService.get('SQS_QUEUE_URL');
   }
+
+  get FASTIFY_LOG_LEVEL(): string {
+    return this.configService.get('FASTIFY_LOG_LEVEL');
+  }
+
+  get FASTIFY_BODY_LIMIT(): number {
+    return this.configService.get('FASTIFY_BODY_LIMIT', 1048576);
+  }
+
+  get FASTIFY_TRUST_PROXY(): boolean {
+    return this.configService.get('FASTIFY_TRUST_PROXY', false);
+  }
 }
